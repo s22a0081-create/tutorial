@@ -260,7 +260,6 @@ def run_ga(cities_names, n_population, n_generations, crossover_per, mutation_pe
 
     return best_mixed_offspring
 
-
 best_mixed_offspring = run_ga(cities_names, n_population, n_generations, crossover_per, mutation_per)
 
 total_dist_all_individuals = []
