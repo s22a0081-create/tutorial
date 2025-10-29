@@ -1,23 +1,14 @@
 import streamlit as st
 import random
 
-
-st.set_page_config(
-    page_title="Genetic Algorithm"
-)
-
-st.header("Genetic Algorithm", divider="gray")
-
 #POP_SIZE: Number of Chromosomes in our list.
 POP_SIZE = 500
-#POP_SIZE = st.number_input("Enter population size")
 
 #MUT_RATE: Rate at which our string will be changed.
-#MUT_RATE = 0.2
+MUT_RATE = 0.2
 
 #TARGET: Our goal.
-#TARGET = 'fakhitah'
-    
+TARGET = 'fakhitah'
 
 #GENES: Options from which our population would be created.
 GENES = ' abcdefghijklmnopqrstuvwxyz'
@@ -133,14 +124,6 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES):
         break
       st.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
       generation+=1
-        
-with st.form("my_form"):
-    TARGET = st.text_input("Enter your name")
-    MUT_RATE = st.number_input("Enter your mutation rate")
-
-    calculate = st.form_submit_button("Calculate")
-
-    if calculate:
-        main(POP_SIZE, MUT_RATE, TARGET, GENES)
 
 
+result = main(POP_SIZE, MUT_RATE, TARGET, GENES)
